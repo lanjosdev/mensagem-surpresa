@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    margin: 0;;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* RESET */
+
+/* GLOBAL */
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* GLOBAL */
+
+
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+
+
+section.mensagem {
+    /* background-color: darkgrey; */
+
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 460px;
+
+    display: none;
+}
+.mensagem .ativa {
+    display: block;
+}
+.mensagem h1 {
+    font-size: 3.5rem;
+    margin: 3rem 0;
+    text-transform: uppercase;
+    animation: florecer 3s;
+}
+.mensagem p {
+    line-height: 4.6rem;
+
+    animation: florecer 5s ease-in-out;
+}
+.mensagem img {
+    border-radius: 15px;
+    margin-top: 4rem;
+
+    animation: florecer 5s;
+}
+
+@keyframes florecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+section.portas {
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+
+    display: flex;
+}
+.portas .clicou {
+    display: none;
+}
+.portas .porta-esquerda {
+    background-color: aqua;
+    height: 100vh;
+    width: 50%;
+    animation: abrir 2s;
+}
+.porta-esquerda .abre {
+    display: none;
+}
+.portas .porta-direita {
+    background-color: blue;
+    height: 100vh;
+    width: 50%;
+
+    transition: 2s ease-in-out;
+}
+.porta-direita .abre {
+    transform: translateX(1000px);
+}
+.portas button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes abrir {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
